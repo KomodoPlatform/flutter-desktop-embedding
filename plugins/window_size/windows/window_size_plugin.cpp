@@ -233,7 +233,7 @@ void WindowSizePlugin::HandleMethodCall(
     int iHeight = int(height + 0.5);
     SetWindowPos(handle, HWND_TOP, 0, 0, iWidth, iHeight, SWP_NOMOVE);
 
-    result->Success(flutter::EncodableValue(true));
+    result->Success();
   }
   else if (method_call.method_name().compare(kSetWindowMaximumSize) == 0) {
     const auto *size = std::get_if<EncodableList>(method_call.arguments());

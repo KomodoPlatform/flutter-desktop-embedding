@@ -238,7 +238,8 @@ static FlMethodResponse* set_window_default_size(FlWindowSizePlugin* self,
   }
 
   if (width >= 0 && height >= 0) {
-    gtk_window_resize((GtkWindow *)self->widget, (int)width, (int)height);
+    self->window_geometry.base_width = static_cast<gint>(width);
+    self->window_geometry.base_height = static_cast<gint>(height);
   }
 
   update_window_geometry(self);
